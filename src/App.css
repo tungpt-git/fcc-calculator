@@ -1,38 +1,130 @@
+body {
+  font-family: Share Tech Mono, monospace;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: #ccc;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+button {
+  position: relative;
+  height: 65px;
+  width: 80px;
   color: white;
+  outline: 1px solid black;
+  border: none;
+  background: #4d4d4d;
+  font-size: 20px;
+  cursor: default;
+  font-family: Share Tech Mono, monospace;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  color: black;
+  outline: 0.05em solid grey;
+  z-index: 3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.calculator {
+  width: 320px;
+  height: "auto";
+  border: 2px solid #47476b;
+  padding: 5px;
+  background: black;
+  margin-top: 100px;
+}
+
+.num-pad {
+  width: 320px;
+  height: "auto";
+  display: grid;
+  grid-template-areas:
+    "clear clear divide multiply"
+    "seven eight nine subtract"
+    "four five six add"
+    "one two three equals"
+    "zero zero decimal equals";
+}
+
+.jumbo {
+  width: 160px;
+}
+
+.operator {
+  background-color: rgb(102, 102, 102);
+}
+
+#clear {
+  grid-area: clear;
+  background-color: rgb(172, 57, 57);
+}
+#divide {
+  grid-area: divide;
+}
+#multiply {
+  grid-area: multiply;
+}
+#add {
+  grid-area: add;
+}
+#subtract {
+  grid-area: subtract;
+}
+#equals {
+  grid-area: equals;
+  height: 130px;
+  background-color: rgb(0, 68, 102);
+}
+#decimal {
+  grid-area: decimal;
+}
+#seven {
+  grid-area: seven;
+}
+#eight {
+  grid-area: eight;
+}
+#nine {
+  grid-area: nine;
+}
+#four {
+  grid-area: four;
+}
+#five {
+  grid-area: five;
+}
+#six {
+  grid-area: six;
+}
+#one {
+  grid-area: one;
+}
+#two {
+  grid-area: two;
+}
+#three {
+  grid-area: three;
+}
+#zero {
+  grid-area: zero;
+}
+
+.formulaScreen {
+  min-height: 20px;
+  font-size: 20px;
+  color: orange;
+  text-align: right;
+  vertical-align: text-top;
+  line-height: 20px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.outputScreen {
+  font-size: 29px;
+  color: white;
+  text-align: right;
+  line-height: 35px;
 }
