@@ -21,27 +21,27 @@ export const reducer = (state, action) => {
     case ACTION_TYPES.DIVIDE: {
       return {
         ...state,
-        formulaArr: isOperator(state.formulaArr.at(-1))
-          ? state.formulaArr.replace(-1, char)
-          : state.formulaArr.concat(char),
+        formulaArr: state.formulaArr
+          .slice(0, state.formulaArr.findLastIndex((e) => isNumber(e)) + 1)
+          .concat(char),
         output: char,
       };
     }
     case ACTION_TYPES.MULTIPLY: {
       return {
         ...state,
-        formulaArr: isOperator(state.formulaArr.at(-1))
-          ? state.formulaArr.replace(-1, char)
-          : state.formulaArr.concat(char),
+        formulaArr: state.formulaArr
+          .slice(0, state.formulaArr.findLastIndex((e) => isNumber(e)) + 1)
+          .concat(char),
         output: char,
       };
     }
     case ACTION_TYPES.ADD: {
       return {
         ...state,
-        formulaArr: isOperator(state.formulaArr.at(-1))
-          ? state.formulaArr.replace(-1, char)
-          : state.formulaArr.concat(char),
+        formulaArr: state.formulaArr
+          .slice(0, state.formulaArr.findLastIndex((e) => isNumber(e)) + 1)
+          .concat(char),
         output: char,
       };
     }
